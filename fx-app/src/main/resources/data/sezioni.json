@@ -1,0 +1,17 @@
+[ {
+  "id" : 1,
+  "nome" : "Antipasti",
+  "ricetteId" : [ ]
+}, {
+  "id" : 2,
+  "nome" : "Antipasti",
+  "ricetteId" : [ ]
+}, {
+  "id" : 3,
+  "nome" : "Primi",
+  "ricetteId" : [ ]
+}, {
+  "id" : 4,
+  "nome" : "Secondi",
+  "ricetteId" : [ ]
+} ]

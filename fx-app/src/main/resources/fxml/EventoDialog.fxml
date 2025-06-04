@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.sas.fxapp.ui.EventoDialogController"
+      spacing="10">
+
+  <!-- Padding intorno a tutto -->
+  <padding>
+    <Insets top="10" right="10" bottom="10" left="10"/>
+  </padding>
+
+  <!-- Griglia per Nome Evento e Data Evento -->
+  <GridPane hgap="10" vgap="10">
+    <Label text="Nome Evento:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfNome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Data Evento:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dpData" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+  </GridPane>
+
+  <!-- Selezione/creazione/modifica/eliminazione Menu -->
+  <VBox spacing="5">
+    <HBox spacing="10" alignment="CENTER_LEFT">
+      <Label text="Menu:"/>
+      <ComboBox fx:id="cmbMenu" prefWidth="200" promptText="Seleziona menu..."/>
+      <Button text="Nuovo" onAction="#onNewMenu"/>
+      <Button fx:id="btnDeleteMenu" text="Elimina" onAction="#onDeleteMenu" disable="true"/>
+    </HBox>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+      <Label text="Nome Menu:"/>
+      <TextField fx:id="tfMenuNome" prefWidth="200"/>
+    </HBox>
+  </VBox>
+
+  <!-- TabPane per la gestione delle sezioni -->
+  <TabPane tabClosingPolicy="UNAVAILABLE">
+    <tabs>
+      <Tab text="Sezioni">
+        <content>
+          <VBox spacing="10">
+            <ToolBar>
+              <Button text="Nuova Sezione"   onAction="#onAddSezione"/>
+              <Button text="Modifica Sezione" onAction="#onEditSezione"/>
+              <Button text="Elimina Sezione"  onAction="#onDeleteSezione"/>
+            </ToolBar>
+            <TableView fx:id="sezioniTable" prefHeight="200.0">
+              <columns>
+                <TableColumn fx:id="colSezId"   text="ID"   prefWidth="50"/>
+                <TableColumn fx:id="colSezNome" text="Nome" prefWidth="200"/>
+              </columns>
+            </TableView>
+          </VBox>
+        </content>
+      </Tab>
+    </tabs>
+  </TabPane>
+
+  <!-- Bottoni OK / Annulla -->
+  <HBox spacing="10" alignment="CENTER_RIGHT">
+    <Button text="OK"      onAction="#onOk"/>
+    <Button text="Annulla" onAction="#onCancel"/>
+  </HBox>
+
+</VBox>

@@ -1,0 +1,16 @@
+[ {
+  "id" : 1,
+  "nome" : "Fabrizio",
+  "data" : [ 2025, 6, 5 ],
+  "menuId" : 1
+}, {
+  "id" : 2,
+  "nome" : "Giovanni",
+  "data" : [ 2025, 6, 18 ],
+  "menuId" : 2
+}, {
+  "id" : 3,
+  "nome" : "Luca",
+  "data" : [ 2025, 6, 28 ],
+  "menuId" : 3
+} ]

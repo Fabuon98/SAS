@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sas.fxapp.ui.MainController"
+            prefWidth="800" prefHeight="600">
+
+  <!-- Sezione superiore: barra degli strumenti con le azioni principali -->
+  <top>
+    <ToolBar>
+      <!-- Crea un nuovo menu -->
+      <Button text="Nuovo Menu" onAction="#onNewMenu"/>
+      <!-- Apre un evento esistente per modificarne il menu -->
+      <Button text="Apri Evento" onAction="#onOpenEvento"/>
+      <Separator/>
+      <!-- Aggiunge una nuova sezione al menu corrente -->
+      <Button text="Aggiungi Sezione" onAction="#onAddSection"/>
+      <!-- Aggiunge una nuova ricetta alla sezione selezionata -->
+      <Button text="Aggiungi Ricetta" onAction="#onAddItem"/>
+      <Separator/>
+      <!-- Rinomina la voce selezionata nell'albero -->
+      <Button text="Rinomina Voce" onAction="#onRenameItem"/>
+      <!-- Sposta la voce selezionata in un'altra posizione -->
+      <Button text="Sposta Voce" onAction="#onMoveItem"/>
+      <!-- Rimuove la voce selezionata dal menu -->
+      <Button text="Rimuovi Voce" onAction="#onRemoveItem"/>
+      <Separator/>
+      <!-- Aggiunge annotazioni libere alla voce selezionata -->
+      <Button text="Annota" onAction="#onAnnotate"/>
+      <Separator/>
+      <!-- Condivide il menu attuale -->
+      <Button text="Condividi" onAction="#onShareMenu"/>
+      <!-- Archivia il menu per uso futuro -->
+      <Button text="Archivia" onAction="#onArchiveMenu"/>
+      <!-- Cancella definitivamente il menu -->
+      <Button text="Cancella" onAction="#onDeleteMenu"/>
+    </ToolBar>
+  </top>
+
+  <!-- Sezione sinistra: elenco degli eventi disponibili -->
+  <left>
+    <VBox spacing="5">
+      <padding>
+        <Insets top="5" right="5" bottom="5" left="5"/>
+      </padding>
+      <Label text="Eventi"/>
+      <!-- Lista da cui selezionare l'evento corrente -->
+      <ListView fx:id="listEventi" prefWidth="150"/>
+    </VBox>
+  </left>
+
+  <!-- Sezione centrale: visualizzazione ad albero del menu -->
+  <center>
+    <VBox spacing="5">
+      <padding>
+        <Insets top="5" right="5" bottom="5" left="5"/>
+      </padding>
+      <Label text="Struttura Menu"/>
+      <!-- Mostra gerarchicamente sezioni, ricette e preparazioni -->
+      <TreeView fx:id="treeMenu" prefWidth="300"/>
+    </VBox>
+  </center>
+
+  <!-- Sezione destra: form di dettaglio per la voce selezionata -->
+  <right>
+    <VBox spacing="8">
+      <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+      </padding>
+      <Label text="Dettagli Voce"/>
+      <Label text="Nome:"/>
+      <!-- Campo per modificare il nome della voce -->
+      <TextField fx:id="txtNomeVoce"/>
+      <Label text="Quantità:"/>
+      <!-- Spinner per impostare la quantità (es. porzioni) -->
+      <Spinner fx:id="spnQuantita" min="1" max="100"/>
+      <Label text="Tempo (min):"/>
+      <!-- Spinner per indicare il tempo di preparazione in minuti -->
+      <Spinner fx:id="spnTempo"/>
+      <Label text="Difficoltà:"/>
+      <!-- ComboBox per selezionare il livello di difficoltà -->
+      <ComboBox fx:id="cmbDifficolta">
+        <items>
+          <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Facile"/>
+            <String fx:value="Media"/>
+            <String fx:value="Difficile"/>
+          </FXCollections>
+        </items>
+      </ComboBox>
+      <Label text="Annotazioni:"/>
+      <!-- Area di testo per note aggiuntive -->
+      <TextArea fx:id="txtAnnotazioni" prefRowCount="3"/>
+      <!-- Pulsante per salvare le modifiche apportate -->
+      <Button text="Salva Modifiche" onAction="#onSaveVoce"/>
+    </VBox>
+  </right>
+
+</BorderPane>
