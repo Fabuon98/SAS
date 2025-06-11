@@ -5,9 +5,14 @@ package com.catering.view.fx;
 
 import com.catering.controller.ChefController;  // Controller per operazioni CRUD su Section
 import com.catering.model.Section;             // Modello di dominio per Sezione
+
 import javafx.geometry.Insets;                  // Per impostare i margini del GridPane
-import javafx.scene.control.*;                  // Dialog, TextField, TextArea, ButtonType, Label, Alert
-import javafx.scene.layout.GridPane;            // Layout a griglia per organizzare i campi
+import javafx.scene.control.ButtonType;                  // Dialog, TextField, TextArea, ButtonType, Label, Alert
+import javafx.scene.control.Dialog;            // Layout a griglia per organizzare i campi
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 /**
  * Dialog personalizzato per gestire la creazione e la modifica di oggetti Section.

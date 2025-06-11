@@ -4,13 +4,17 @@
 package com.catering.view.fx;
 
 import com.catering.controller.ChefController;   // Controller per operazioni CRUD su sezioni e ricette
-import com.catering.model.Section;              // Modello di dominio per Sezione di menu
-import com.catering.model.Recipe;               // Modello di dominio per Ricetta
+import com.catering.model.Recipe;              // Modello di dominio per Sezione di menu
+import com.catering.model.Section;               // Modello di dominio per Ricetta
+
 import javafx.geometry.Insets;                  // Per impostare padding nei layout
 import javafx.geometry.Pos;                     // Per l’allineamento nei layout
-import javafx.scene.control.*;                  // Import di Label, Button, ListView, Tab, Alert, ecc.
-import javafx.scene.layout.HBox;                // Layout orizzontale per i pulsanti
-import javafx.scene.layout.VBox;                // Layout verticale per titolo, lista e pulsanti
+import javafx.scene.control.Button;                  // Import di Label, Button, ListView, Tab, Alert, ecc.
+import javafx.scene.control.Label;                // Layout orizzontale per i pulsanti
+import javafx.scene.control.ListView;                // Layout verticale per titolo, lista e pulsanti
+import javafx.scene.control.Tab;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * Classe responsabile della creazione e gestione della Tab “Sezioni”

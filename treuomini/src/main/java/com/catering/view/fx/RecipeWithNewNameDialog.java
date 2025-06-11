@@ -4,12 +4,18 @@
 package com.catering.view.fx;
 
 import com.catering.controller.ChefController;   // Controller per operazioni CRUD su Ricette e Sezioni
-import com.catering.model.Recipe;               // Modello di dominio per Ricetta
-import com.catering.model.Section;              // Modello di dominio per Sezione
-import com.catering.model.Preparation;          // Modello di dominio per singolo passaggio di preparazione
+import com.catering.model.Preparation;               // Modello di dominio per Ricetta
+import com.catering.model.Recipe;              // Modello di dominio per Sezione
+import com.catering.model.Section;          // Modello di dominio per singolo passaggio di preparazione
+
 import javafx.geometry.Insets;                  // Per padding nei layout
-import javafx.scene.control.*;                  // Dialog, Label, TextField, TextArea, Separator, ButtonType, Alert
-import javafx.scene.layout.VBox;                // Layout verticale per comporre i nodi
+import javafx.scene.control.ButtonType;                  // Dialog, Label, TextField, TextArea, Separator, ButtonType, Alert
+import javafx.scene.control.Dialog;                // Layout verticale per comporre i nodi
+import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 /**
  * Dialog per collegare una ricetta a una sezione, eventualmente rinominandola.
