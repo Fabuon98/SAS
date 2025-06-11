@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Documento POM (Project Object Model) per Maven, versione 4.0.0.
+  Definisce la configurazione del progetto, dipendenze, plugin, ecc.
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Versione del modello POM usata da Maven -->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 
+      Coordinate uniche del progetto:
+      - groupId: identifica l'organizzazione o il dominio (in genere in notazione reversed-domain)
+      - artifactId: nome univoco dell'artefatto (jar, war, ecc.) all'interno di quel groupId
+      - version: versione corrente del progetto
+    -->
     <groupId>com.catering</groupId>
     <artifactId>chef-app</artifactId>
     <version>1.0.0</version>
+
+    <!-- Tipo di packaging dell'output: jar, war, ear, ecc. -->
     <packaging>jar</packaging>
 
+    <!-- Metadati per il progetto -->
     <name>Chef Management Application</name>
     <description>Applicazione per la gestione di eventi, menu, sezioni e ricette per chef</description>
 
+    <!-- 
+      Proprietà globali riutilizzabili nel POM:
+      - maven.compiler.source/target: livello Java per compilazione
+      - project.build.sourceEncoding: codifica dei file sorgente
+      - javafx.version: versione di JavaFX
+      - javafx.maven.plugin.version: versione del plugin JavaFX per Maven
+    -->
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -21,36 +43,40 @@
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
     </properties>
 
+    <!-- 
+      Dipendenze esterne: librerie di terze parti necessarie a runtime o compile-time.
+      Maven le recupera automaticamente dal repository centrale (o da altri configurati).
+    -->
     <dependencies>
-        <!-- JavaFX Controls -->
+        <!-- JavaFX Controls: componenti UI di base (bottoni, text field, ecc.) -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- JavaFX FXML -->
+        <!-- JavaFX FXML: supporto per file FXML (markup UI) -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- JavaFX Base -->
+        <!-- JavaFX Base: fondamenta di JavaFX, nodi, proprietà, binding -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- JavaFX Graphics -->
+        <!-- JavaFX Graphics: rendering grafico, scene graph -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- JUnit per i test (opzionale) -->
+        <!-- JUnit Jupiter Engine: framework per test unitari (scope test) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -59,30 +85,36 @@
         </dependency>
     </dependencies>
 
+    <!-- 
+      Configurazione del processo di build:
+      plugin configurati per compilare, eseguire e testare l'applicazione.
+    -->
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
+            <!-- Maven Compiler Plugin: compila il codice Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
+                    <!-- Sovrascrive le proprietà generali, se necessario -->
                     <source>11</source>
                     <target>11</target>
                 </configuration>
             </plugin>
 
-            <!-- JavaFX Maven Plugin -->
+            <!-- JavaFX Maven Plugin: semplifica esecuzione e packaging di app JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
+                    <!-- Classe principale contenente il metodo main -->
                     <mainClass>com.catering.Main</mainClass>
                 </configuration>
                 <executions>
                     <execution>
-                        <!-- Configuration for automatic CLI execution -->
+                        <!-- Associa il plugin al goal 'run' sulla CLI -->
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.catering.Main</mainClass>
@@ -91,7 +123,7 @@
                 </executions>
             </plugin>
 
-            <!-- Maven Surefire Plugin per i test -->
+            <!-- Maven Surefire Plugin: esegue i test unitari durante il build -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

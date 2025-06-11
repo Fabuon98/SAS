@@ -7,7 +7,6 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import java.time.LocalDate;
-import java.util.Optional;
 
 public class EventDialog extends Dialog<Event> {
     private ChefController controller;
