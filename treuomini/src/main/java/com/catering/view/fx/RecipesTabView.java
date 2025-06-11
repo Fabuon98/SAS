@@ -5,11 +5,15 @@ package com.catering.view.fx;
 
 import com.catering.controller.ChefController;  // Controller per operazioni CRUD su Ricette
 import com.catering.model.Recipe;              // Modello di dominio per Ricetta
+
 import javafx.geometry.Insets;                 // Per padding nei layout
 import javafx.geometry.Pos;                    // Per allineamento nei layout
-import javafx.scene.control.*;                 // Label, Button, ListView, Tab, Alert, ecc.
-import javafx.scene.layout.HBox;               // Layout orizzontale
-import javafx.scene.layout.VBox;               // Layout verticale
+import javafx.scene.control.Button;                 // Label, Button, ListView, Tab, Alert, ecc.
+import javafx.scene.control.Label;               // Layout orizzontale
+import javafx.scene.control.ListView;               // Layout verticale
+import javafx.scene.control.Tab;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * Classe responsabile della creazione e gestione della Tab “Ricette”.

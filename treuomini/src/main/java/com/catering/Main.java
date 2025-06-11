@@ -4,10 +4,9 @@
 package com.catering;  
 
 // Import della classe JavaFX che gestisce il ciclo di vita di un’applicazione FX
-import javafx.application.Application;
-
-// Import della nostra classe che estende Application e definisce la UI
 import com.catering.view.fx.ChefViewFX;
+
+import javafx.application.Application;
 
 /**
  * Punto di ingresso dell’applicazione.
